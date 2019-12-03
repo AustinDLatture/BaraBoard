@@ -41,7 +41,7 @@ class SmallCard extends Component {
             }
         });
         switch(status) {
-            case (''):
+            case (''): //if no status, it is unstarted
                 cardJSONs.forEach(cardJSON => {
                     if (cardJSON.cardID === cardID) {
                         cardJSON.cardStatus = 'In progress';
@@ -78,7 +78,6 @@ class SmallCard extends Component {
                 break;
 
             default:
-                console.log('trying to advance');
                 break;
         }
         localStorage.setItem('cardJSONs', JSON.stringify(cardJSONs));
@@ -97,7 +96,7 @@ class SmallCard extends Component {
             case (''): //if no status, it is unstarted
                 cardJSONs.forEach(cardJSON => {
                     if (cardJSON.cardID === cardID) {
-                        cardJSON.cardStatus = 'Unstarted';
+                        cardJSON.cardStatus = '';
                     }
                 });
                 this.setState({className: 'card-unstarted', status: 'Unstarted'});
@@ -106,7 +105,7 @@ class SmallCard extends Component {
             case ('In progress'):
                 cardJSONs.forEach(cardJSON => {
                     if (cardJSON.cardID === cardID) {
-                        cardJSON.cardStatus = 'Unstarted';
+                        cardJSON.cardStatus = '';
                     }
                 });
                 this.setState({className: 'card-unstarted', status: 'Unstarted'});
@@ -131,7 +130,6 @@ class SmallCard extends Component {
                 break;
 
             default:
-                console.log('trying to retreat');
                 break;
         }
         localStorage.setItem('cardJSONs', JSON.stringify(cardJSONs));
@@ -144,7 +142,7 @@ class SmallCard extends Component {
                     <CardTitle expand style={{color: '#fff', background: '#42b883'}}>
                     <Textfield
                             label={"Enter task name..."}
-                            value={this.state.cardTitle || null}
+                            value={this.state.cardTitle || undefined}
                             style={{width: '300px', color: 'black'}}
                             onChange={this.props.handleTaskTitleChange}
                     />
@@ -152,7 +150,7 @@ class SmallCard extends Component {
                     <CardText>
                         <Textfield
                             label={"Enter details..."}
-                            value={this.state.cardText || null}
+                            value={this.state.cardText || undefined}
                             rows={3}
                             style={{width: '300px', color: 'black'}}
                             onChange={this.props.handleTaskDetailsChange}

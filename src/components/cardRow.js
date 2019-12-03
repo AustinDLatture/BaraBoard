@@ -4,7 +4,7 @@ import SmallCard from './smallCard';
 import { FABButton,
          Icon 
         } from 'react-mdl';
-        
+
 class CardRow extends Component {
     constructor(props) {
         super(props);
@@ -16,11 +16,11 @@ class CardRow extends Component {
     }
 
     deleteCard() {
-        const cardJSONs = JSON.parse(localStorage.getItem('cardJSONs'));
+        let cardJSONs = JSON.parse(localStorage.getItem('cardJSONs'));
         const cardID = this.state.cardID;
         cardJSONs.forEach(cardJSON => {
             if (cardJSON.cardID === cardID) {
-                cardJSONs.splice(cardID, 1);
+                cardJSONs = cardJSONs.splice(cardID, 1);
             }
         });
         const numCards = parseInt(localStorage.getItem('numCards')) - 1;

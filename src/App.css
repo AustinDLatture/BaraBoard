@@ -42,17 +42,11 @@
   position: relative;
 }
 
-.board-fabs {
-  display: inline;
-  margin-left: 25px;
-  margin-top: 25px;
-  position: absolute;
-}
-
 .card-row {
   position: relative;
   width: 100%;
   left: 75px;
+  top: 12px;
 }
 
 .project-title {
@@ -63,15 +57,8 @@
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  text-align: auto;
   width: 25%;
   border-radius: 10px;
-}
-
-.add-task-fab {
-  position: absolute;
-  margin-left: 1%;
-  margin-bottom: 2%;
 }
 
 .header {
@@ -83,23 +70,20 @@
   font-weight: 800;
 }
 
+.add-task-text {
+	display: inline;
+	position: relative;
+	font: 20px Verdana, Sans-Serif;
+	letter-spacing: -2px;
+  color: #00c3ff; 
+  font-weight: 800;
+  top: 2px;
+}
+
 h1:after {
 	content: "BaraBoard";
   position: absolute; 
   left: 4px; 
   top: 4px;
 	color:#42b883;   
-}
-
-.about {
-  border-style: solid;
-  border-radius: 10px;
-  border-color: white;
-  width: 800px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
-  color: white;
-  font: Verdana, Sans-Serif
 }
