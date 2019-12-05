@@ -85,7 +85,7 @@ class Board extends Component {
                     <FABButton mini onClick={this.addCard} ripple>
                         <Icon name='+'/>
                     </FABButton>
-                    <h2 className='add-task-text '> add task</h2>
+                    <h2 className='add-task-text '> Add task</h2>
                     </div>
                     
                 </div>
