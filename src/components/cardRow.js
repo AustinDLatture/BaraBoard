@@ -18,11 +18,7 @@ class CardRow extends Component {
     deleteCard() {
         let cardJSONs = JSON.parse(localStorage.getItem('cardJSONs'));
         const cardID = this.state.cardID;
-        cardJSONs.forEach(cardJSON => {
-            if (cardJSON.cardID === cardID) {
-                cardJSONs = cardJSONs.splice(cardID, 1);
-            }
-        });
+        cardJSONs = cardJSONs.filter(cardJSON => cardJSON.cardID !== cardID);
         const numCards = parseInt(localStorage.getItem('numCards')) - 1;
         localStorage.setItem('numCards', numCards);
         localStorage.setItem('cardJSONs', JSON.stringify(cardJSONs));
